@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <form action="/pages/{{page.id}}/update/">
+    <div class="form-group">
+      <label for="myname">Name</label>
+      <input type="text" class="form-control" id="myname" name="myname" value="{{page.myname}}" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="myage">Age</label>
+      <input type="number" class="form-control" id="myage" name="myage" value="{{page.myage}}" placeholder="Age">
+    </div>
+    <button type="submit" class="btn btn-warning">수정</button>
+  </form>
+{% endblock %}
