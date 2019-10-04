@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="title">제목</label>
+      <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="author">작성자</label>
+      <input type="text" class="form-control" name="author" id="author" placeholder="Author">
+    </div>
+    <div class="form-group">
+      <label for="content">내용</label>
+      <input type="text" class="form-control" name="content" id="content" placeholder="Content">
+    </div>
+    <div class="form-group">
+      <label for="due-date">마감일</label>
+      <input type="date" class="form-control" name="due-date" id="due-date">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

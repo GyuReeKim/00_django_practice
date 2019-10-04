@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h1>Home</h1>
+  {% for todo in todos %}
+    <div class="card">
+      <div class="card-header">
+        {{todo.author}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{todo.title}}</h5>
+        <p class="card-text">{{todo.content}}</p>
+        <a href="{% url 'todos:delete' todo.id %}" class="btn btn-danger">삭제</a>
+        <a href="{% url 'todos:update' todo.id %}" class="btn btn-warning">수정</a>
+        <a href="{% url 'todos:detail' todo.id %}" class="btn btn-primary">상세보기</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{todo.due_date}}
+      </div>
+    </div>
+  {% empty %}
+    <a href="{% url 'todos:create' %}" class="btn btn-info">New</a>
+  {% endfor %}
+{% endblock %}
